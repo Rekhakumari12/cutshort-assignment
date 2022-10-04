@@ -12,7 +12,7 @@ const Input = ({
   console.log(withUrl);
   return (
     <div className="flex flex-col pt-5">
-      <label for="name" className="pb-2">
+      <label htmlFor="name" className="pb-2">
         {label}
       </label>
       {withUrl ? (

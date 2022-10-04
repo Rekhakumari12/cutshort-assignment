@@ -1,4 +1,4 @@
-export const FormTitles = [
+export const ContentTitles = [
   { step: 1, text: `Welcome! First thing first...`, subtitle: `You can always change them later` },
   { step: 2, text: `Let's setup a home for your all work`, subtitle: `You can always create another workspace later` },
   { step: 3, text: `How are you pannng to use eden?`, subtitle: `We'll streamline your experience accordingly` },
