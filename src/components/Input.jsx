@@ -22,6 +22,7 @@ const Input = ({
             disabled
             className="border border-r-0 p-3 rounded-l"
             style={{ width: '45%' }}
+            required
           />
           <input
             id="name"
@@ -32,6 +33,7 @@ const Input = ({
             defaultValue={value}
             name={name}
             style={{ width: '100%' }}
+            required
           />
         </div>
       ) : (
@@ -43,6 +45,7 @@ const Input = ({
           onChange={handleChange}
           defaultValue={value}
           name={name}
+          required
         />
       )}
     </div>

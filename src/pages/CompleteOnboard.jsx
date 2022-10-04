@@ -1,12 +1,11 @@
 import React from 'react';
-import { FormTitles } from '../constants/constants';
-
+import { ReactComponent as CheckIcon } from '../assets/check.svg'
+import { CheckWrapper } from '../container/App.style';
 const CompleteOnboard = ({ userName, currentStep, workplaceName }) => {
   return (
-    <div>
-      <h2>{`${FormTitles[currentStep - 1].text}, ${userName}!`}</h2>
-      <span>{`${FormTitles[currentStep - 1].subtitle} ${workplaceName}!`}</span>
-    </div>
+    <CheckWrapper>
+      <CheckIcon />
+    </CheckWrapper>
   );
 }
 

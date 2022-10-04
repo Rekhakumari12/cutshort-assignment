@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inter", sans-serif;
   color: var(--black);
+  font-size: 14px;
 }
 
 code {
@@ -23,13 +24,4 @@ code {
   --grey: #eff2f6;
   --black: #070b11;
   --dark-grey: #606977;
-}
-svg g {
-  fill: var(--purple);
-}
-svg {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  bottom: 4px;
 }

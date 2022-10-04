@@ -45,7 +45,7 @@ function App() {
           data={workspaceInfo} />
       case 3:
         return <SetupInfo
-          handleChange={debounceFunction}
+          handleChange={handleChange}
           data={setup} />
       case 4:
         return <CompleteOnboard
@@ -65,7 +65,7 @@ function App() {
   const width = 25 * currentStep
   return (
     <AppWrapper>
-      <div className='flex justify-center items-center'>
+      <div className='flex justify-center items-center' id="logo">
         <Logo /><h1 className='text-2xl font-bold pl-2'>Eden</h1>
       </div>
       <ProgressBar className='border-solid border border-t-0 w-9/12 m-auto' >
@@ -78,16 +78,17 @@ function App() {
           </Bullet>
         })}
       </ul>
+      {currentStep === 4 && formDisplay()}
       <div className='formTitle'>
-        {currentStep !== 4 && <h2>{FormTitles[currentStep - 1].text}</h2>}
-        {currentStep !== 4 && <span>{FormTitles[currentStep - 1].subtitle}</span>}
+        <h2>{FormTitles[currentStep - 1].text}</h2>
+        <span>{FormTitles[currentStep - 1].subtitle}</span>
       </div>
-      {formDisplay()}
+      {currentStep !== 4 && formDisplay()}
       <br />
       <button onClick={currentStep !== FormTitles.length ? handleNext : handleSubmit} className="border p-3 rounded text-white" style={{ backgroundColor: `var(--purple)` }}>
         {currentStep !== FormTitles.length ? `Create Workplace` : `Launch ${data.workspaceInfo.name}`}
       </button>
-      <button onClick={handlePrev}>Prev</button>
+      {/* <button onClick={handlePrev}>Prev</button> */}
     </AppWrapper >
   );
 }
