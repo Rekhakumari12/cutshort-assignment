@@ -21,7 +21,7 @@ export const AppWrapper = styled.div`
     }
   }
 
-  .formTitle {
+  .contentTitle {
     text-align: center;
     h2 {
       font-size: 1.5rem;
