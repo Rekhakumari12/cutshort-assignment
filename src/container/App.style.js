@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const AppWrapper = styled.div`
     display: flex;
-    border: 1px solid;
+    /* border: 1px solid; */
     flex-direction: column;
     width: 30%;
     position: absolute;
@@ -9,6 +9,23 @@ export const AppWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     padding:1rem;
+
+    .formTitle {
+      text-align:center;
+      h2{
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-bottom: 0.3rem;
+    padding-top: 1rem;
+      }
+      span{
+        color: var(--dark-grey);
+        font-size: smaller;
+      }
+    }
+    label, input{
+      font-size: smaller;
+    }
 `
 
 export const Bullet = styled.li`
@@ -34,4 +51,8 @@ export const ProgressBar = styled.div`
       position: absolute;
     }
 
+`
+
+export const InputWrapper = styled.div`
+  padding-top: 1rem;
 `

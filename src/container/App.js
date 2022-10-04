@@ -1,9 +1,9 @@
 import { AppWrapper, Bullet, ProgressBar } from './App.style';
 import { useReducer, useState, useMemo } from 'react'
-import UserNameInfo from '../components/UserNameInfo';
-import WorkspaceInfo from '../components/WorkspaceInfo';
-import SetupInfo from '../components/SetupInfo';
-import CompleteOnboard from '../components/CompleteOnboard';
+import UserNameInfo from '../pages/UserNameInfo';
+import WorkspaceInfo from '../pages/WorkspaceInfo';
+import SetupInfo from '../pages/SetupInfo';
+import CompleteOnboard from '../pages/CompleteOnboard';
 import { reducer } from '../reducer/reducer';
 import InitialState from '../InitialState';
 import { FormTitles } from '../constants/constants';
@@ -30,7 +30,7 @@ function App() {
     dispatch({ type: name, payload: value })
   }
 
-  const debounceFunction = debounce(handleChange, 500)
+  const debounceFunction = debounce(handleChange, 300)
 
   const formDisplay = () => {
     const { userNameInfo, workspaceInfo, setup } = data
@@ -78,11 +78,13 @@ function App() {
           </Bullet>
         })}
       </ul>
-      {currentStep !== 4 && <h2>{FormTitles[currentStep - 1].text}</h2>}
-      {currentStep !== 4 && <span>{FormTitles[currentStep - 1].subtitle}</span>}
+      <div className='formTitle'>
+        {currentStep !== 4 && <h2>{FormTitles[currentStep - 1].text}</h2>}
+        {currentStep !== 4 && <span>{FormTitles[currentStep - 1].subtitle}</span>}
+      </div>
       {formDisplay()}
       <br />
-      <button onClick={currentStep !== FormTitles.length ? handleNext : handleSubmit}>
+      <button onClick={currentStep !== FormTitles.length ? handleNext : handleSubmit} className="border p-3 rounded text-white" style={{ backgroundColor: `var(--purple)` }}>
         {currentStep !== FormTitles.length ? `Create Workplace` : `Launch ${data.workspaceInfo.name}`}
       </button>
       <button onClick={handlePrev}>Prev</button>
