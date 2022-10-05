@@ -9,7 +9,6 @@ const Input = ({
   type,
   withUrl,
 }) => {
-  console.log(withUrl);
   return (
     <div className="flex flex-col pt-5">
       <label htmlFor="name" className="pb-2">

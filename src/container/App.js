@@ -3,9 +3,8 @@ import { useReducer, useState, useMemo } from "react";
 import UserNameInfo from "../pages/UserNameInfo";
 import WorkspaceInfo from "../pages/WorkspaceInfo";
 import SetupInfo from "../pages/SetupInfo";
-import CompleteOnboard from "../pages/CompleteOnboard";
 import { CheckWrapper } from "./App.style";
-import { ReactComponent as CheckIcon } from '../assets/check.svg'
+import { ReactComponent as CheckIcon } from "../assets/check.svg";
 import { reducer } from "../reducer/reducer";
 import InitialState from "../InitialState";
 import { ContentTitles } from "../constants/constants";
@@ -27,7 +26,7 @@ function App() {
   const handleChange = (e) => {
     let { name, value, dataset } = e.target;
     if (dataset.setup) value = dataset.setup;
-    dispatch({ type: name, payload: value });
+    dispatch({ type: name, payload: value.charAt(0).toUpperCase() + value.slice(1) });
   };
 
   const debounceFunction = debounce(handleChange, 300);
@@ -66,17 +65,27 @@ function App() {
     <AppWrapper>
       <Header />
       <StepProgress currentStep={currentStep} steps={steps} />
-      <div style={{
-        display: "grid",
-        placeContent: "center"
-      }}>
+      <div
+        style={{
+          display: "grid",
+          placeContent: "center",
+        }}
+      >
         {currentStep === maxSteps && displayContent()}
       </div>
-      <ContentTitle ContentTitles={ContentTitles} currentStep={currentStep} />
-      <div style={{
-        display: `${currentStep !== maxSteps ? `grid` : ``}`,
-        placeContent: "center"
-      }}>
+      <ContentTitle
+        ContentTitles={ContentTitles}
+        currentStep={currentStep}
+        name={data.userNameInfo.displayName}
+        maxSteps={maxSteps}
+        workspaceName={data.workspaceInfo.name}
+      />
+      <div
+        style={{
+          display: `${currentStep !== maxSteps ? `grid` : ``}`,
+          placeContent: "center",
+        }}
+      >
         {currentStep !== maxSteps && displayContent()}
         <br />
         <Button
@@ -87,7 +96,7 @@ function App() {
           data={data}
         />
       </div>
-    </AppWrapper >
+    </AppWrapper>
   );
 }
 
