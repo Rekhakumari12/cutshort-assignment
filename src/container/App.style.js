@@ -1,12 +1,6 @@
 import styled from "styled-components";
 export const AppWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  max-width: max-content;
   padding: 1rem;
 
   #logo {
@@ -24,7 +18,7 @@ export const AppWrapper = styled.div`
   .contentTitle {
     text-align: center;
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       font-weight: bold;
       padding-bottom: 0.3rem;
       padding-top: 1rem;
@@ -37,6 +31,9 @@ export const AppWrapper = styled.div`
   label,
   input {
     font-size: smaller;
+  }
+  ul {
+    position: relative;
   }
 `;
 
@@ -58,6 +55,9 @@ export const ProgressBar = styled.div`
   top: 4.8rem;
   z-index: -2;
   transition: width 0.4s;
+
+  max-width: 19rem;
+  width: 100%;
   div {
     border-color: #654de4;
     z-index: -1;
@@ -67,12 +67,14 @@ export const ProgressBar = styled.div`
 
 export const InputWrapper = styled.div`
   padding-top: 1rem;
+  width: 25rem;
 `;
 
 export const SetupWrapper = styled.div`
   display: flex;
   margin-top: 2.5rem;
   gap: 2rem;
+  width: 25rem;
   h3 {
     font-weight: bold;
     font-size: medium;
@@ -98,18 +100,22 @@ export const SetupWrapper = styled.div`
   }
 `;
 
-
 export const CheckWrapper = styled.div`
-    margin: auto;
-    border: 1px solid var(--purple);
-    padding: 1rem;
-    border-radius: 50%;
-    background-color: var(--purple);
-    svg > path {
-      fill: white;
-    }
-    svg {
-      position: relative;
-      width: 20px;
-    }
-`
+  margin: auto;
+  border: 1px solid var(--purple);
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: var(--purple);
+  svg > path {
+    fill: white;
+  }
+  svg {
+    position: relative;
+    width: 20px;
+  }
+`;
+
+export const StepProgressWrapper = styled.div`
+  width: 25rem;
+  margin: auto;
+`;

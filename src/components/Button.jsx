@@ -6,7 +6,7 @@ const Button = ({ currentStep, ContentTitles, handleNext, handleSubmit, data }) 
       type="submit"
       onClick={currentStep !== ContentTitles.length ? handleNext : handleSubmit}
       className="border p-3 rounded text-white"
-      style={{ backgroundColor: `var(--purple)` }}
+      style={{ backgroundColor: `var(--purple)`, width: '100%', borderColor: "transparent" }}
     >
       {currentStep !== ContentTitles.length
         ? `Create Workplace`
